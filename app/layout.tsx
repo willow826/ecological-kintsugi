@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description:
       "Temporary repair traces, public noticing, and a growing archive of marginal urban ecologies.",
     type: "website",
-    images: ["/archive/site01-after-detail.jpg"],
+    images: ["/archive-final/hero-application.jpg"],
   },
 };
 

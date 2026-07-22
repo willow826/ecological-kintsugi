@@ -1,56 +1,60 @@
-const surveyUrl = "https://tally.so/r/BzlJ7Q";
-
 const archiveItems = [
   {
-    src: "/archive/site01-baseline-crack.jpg",
-    title: "Before the trace",
+    src: "/archive-final/hero-application.jpg",
+    title: "Applying the trace",
+    meta: "Site 01 · Tree-side asphalt crack · 19 Jul 2026",
+    note: "The repair trace was applied by hand as a temporary material gesture.",
+  },
+  {
+    src: "/archive-final/site01-baseline-crack.jpg",
+    title: "Site condition",
     meta: "Site 01 · Tree-side asphalt crack · 19 Jul 2026",
     note: "The crack was already present as a small edge condition beside the tree.",
   },
   {
-    src: "/archive/turmeric-pulp-bowl.jpg",
+    src: "/archive-final/turmeric-pulp-bowl.jpg",
     title: "Material preparation",
     meta: "Turmeric paper pulp · temporary mixture",
     note: "A visible, removable material was prepared as a short-lived repair gesture.",
   },
   {
-    src: "/archive/turmeric-pulp-application.jpg",
-    title: "Applying the repair trace",
+    src: "/archive-final/turmeric-pulp-application.jpg",
+    title: "Low-impact making",
     meta: "On-site making · low impact intervention",
     note: "The material follows the crack rather than covering the surrounding ecology.",
   },
   {
-    src: "/archive/site01-after-detail.jpg",
+    src: "/archive-final/site01-after-detail.jpg",
     title: "Repair as attention",
     meta: "Immediately after application",
     note: "The yellow trace redirects attention towards the existing crack and nearby plant life.",
   },
   {
-    src: "/archive/qr-card-grass-test.jpg",
-    title: "QR card test",
+    src: "/archive-final/qr-card-grass-test.jpg",
+    title: "Small public prompt",
     meta: "Public prompt · removable label",
     note: "A small prompt invites passers-by to respond without turning the site into a poster.",
   },
   {
-    src: "/archive/two-hour-return-material.jpg",
+    src: "/archive-final/two-hour-return-material.jpg",
     title: "Two-hour return",
     meta: "Same day follow-up",
     note: "The trace remained visible while the public-facing card was removed from the site.",
   },
   {
-    src: "/archive/day2-material-state.jpg",
+    src: "/archive-final/day2-material-state.jpg",
     title: "Day 2 material state",
     meta: "Weathering and disappearance",
     note: "Change, fading and removal are treated as part of the project evidence.",
   },
   {
-    src: "/archive/wall-edge-existing-ecology.jpg",
+    src: "/archive-final/wall-edge-existing-ecology.jpg",
     title: "Existing marginal ecology",
     meta: "Wall edge · spontaneous vegetation",
     note: "The project looks for ecology already present in overlooked urban edges.",
   },
   {
-    src: "/archive/trace-pavement-overview.jpg",
+    src: "/archive-final/trace-pavement-overview.jpg",
     title: "Trace in passing view",
     meta: "Pavement scale · everyday attention",
     note: "The intervention is small enough to belong to the ground, but bright enough to interrupt habitual walking.",
@@ -70,23 +74,24 @@ export default function Home() {
       <section className="hero" aria-label="Ecological Kintsugi introduction">
         <div className="hero-media">
           <img
-            src="/archive/site01-after-detail.jpg"
-            alt="A yellow temporary repair trace following a pavement crack"
+            src="/archive-final/hero-application.jpg"
+            alt="A person applying a yellow temporary repair trace to a pavement crack"
           />
         </div>
         <div className="hero-copy">
           <p className="eyebrow">Ecological Kintsugi</p>
-          <h1>This crack was already here.</h1>
+          <h1>Repairing attention, not the crack.</h1>
           <p className="lead">
-            A temporary repair trace asks whether a small material gesture can
-            make overlooked cracks, mosses and spontaneous plants more visible.
+            A Research through Design project using temporary yellow repair
+            traces to make overlooked urban cracks and marginal ecologies more
+            visible.
           </p>
           <div className="actions">
-            <a className="primary-action" href={surveyUrl}>
-              Answer the 30-second survey
+            <a className="primary-action" href="#about">
+              About the project
             </a>
-            <a className="secondary-action" href="#archive">
-              View the archive
+            <a className="secondary-action" href="#poll">
+              Try the one-question poll
             </a>
           </div>
         </div>
@@ -134,6 +139,21 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section poll" id="poll">
+        <div className="poll-panel">
+          <div>
+            <p className="eyebrow">One-question poll</p>
+            <h2>What did you notice first?</h2>
+            <p>
+              This lightweight poll is part of the online version of the
+              project. It does not store personal data; it simply mirrors the
+              question asked by the field intervention.
+            </p>
+          </div>
+          <Poll />
+        </div>
+      </section>
+
       <section className="section method">
         <div className="section-heading">
           <p className="eyebrow">Temporary repair trace</p>
@@ -177,8 +197,9 @@ export default function Home() {
 
       <section className="closing">
         <p>The crack was always here. Perhaps your attention wasn&apos;t.</p>
-        <a href={surveyUrl}>Respond to the survey</a>
+        <a href="#archive">Continue through the archive</a>
       </section>
     </main>
   );
 }
+import { Poll } from "./Poll";
