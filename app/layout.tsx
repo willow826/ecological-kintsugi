@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Ecological Kintsugi",
   description:
-    "A temporary repair trace project making overlooked urban cracks and marginal ecologies visible.",
+    "A temporary repair trace project asking how overlooked urban cracks and marginal ecologies can become visible in everyday movement.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Ecological Kintsugi",
     description:
-      "Temporary repair traces, public noticing, and a growing archive of marginal urban ecologies.",
+      "Temporary repair traces, public noticing, field iterations and a growing archive of marginal urban ecologies.",
     type: "website",
     images: ["/archive-final/hero-application.jpg"],
   },

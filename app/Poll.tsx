@@ -3,10 +3,11 @@
 import { useState } from "react";
 
 const pollOptions = [
-  "The yellow trace",
-  "The crack",
-  "Moss / plants nearby",
+  "The crack itself",
+  "The plant or moss nearby",
+  "The edge between pavement and wall",
   "The act of repair",
+  "I am not sure yet",
 ];
 
 export function Poll() {
@@ -39,11 +40,12 @@ export function Poll() {
         </label>
       ))}
       <button disabled={!selected} type="submit">
-        Submit response
+        Mark what I noticed
       </button>
       {submitted ? (
         <p className="poll-thanks">
-          Thank you. Your noticing becomes part of how the project is read.
+          Thank you. That shift of attention is exactly what the project is
+          trying to trace.
         </p>
       ) : null}
     </form>

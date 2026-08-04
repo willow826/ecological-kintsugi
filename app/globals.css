@@ -4,10 +4,12 @@
   --ink: #191814;
   --muted: #686258;
   --green: #203d18;
+  --green-2: #3f5f32;
   --soft-green: #9ca272;
   --gold: #df9e00;
   --gold-soft: #f5c85d;
   --line: #d8d1c2;
+  --cream: #f2eee3;
   --shadow: 0 20px 70px rgba(43, 37, 22, 0.12);
 }
 
@@ -41,6 +43,35 @@ main {
   min-height: 100vh;
 }
 
+.top-nav {
+  position: fixed;
+  top: 14px;
+  left: 50%;
+  z-index: 20;
+  display: flex;
+  max-width: calc(100% - 28px);
+  transform: translateX(-50%);
+  overflow: hidden;
+  border: 1px solid rgba(25, 24, 20, 0.16);
+  border-radius: 999px;
+  background: rgba(251, 250, 246, 0.82);
+  box-shadow: 0 10px 40px rgba(25, 24, 20, 0.1);
+  backdrop-filter: blur(18px);
+}
+
+.top-nav a {
+  padding: 10px 13px;
+  color: var(--green);
+  font-size: 0.78rem;
+  font-weight: 760;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.top-nav a + a {
+  border-left: 1px solid rgba(25, 24, 20, 0.12);
+}
+
 .hero {
   display: grid;
   min-height: 100svh;
@@ -64,7 +95,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 34px 22px 28px;
+  padding: 72px 22px 34px;
 }
 
 .eyebrow {
@@ -86,7 +117,8 @@ p {
 h1 {
   max-width: 11ch;
   margin: 0;
-  font-size: clamp(3rem, 14vw, 6.4rem);
+  color: var(--green);
+  font-size: clamp(3.4rem, 16vw, 7.6rem);
   line-height: 0.92;
   letter-spacing: 0;
 }
@@ -158,9 +190,26 @@ h1 {
 .section-heading h2 {
   max-width: 760px;
   margin: 0;
+  color: var(--green);
   font-size: clamp(2.2rem, 8vw, 4.8rem);
   line-height: 0.98;
   letter-spacing: 0;
+}
+
+.about-layout {
+  display: grid;
+  gap: 30px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.about-intro {
+  max-width: 860px;
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.2rem, 3vw, 2.1rem);
+  font-weight: 680;
+  line-height: 1.24;
 }
 
 .about-grid,
@@ -180,15 +229,19 @@ h1 {
 }
 
 .about-grid h3,
-.archive-card h3 {
+.archive-card h3,
+.principle h3,
+.iteration-card h3 {
   margin: 0 0 12px;
+  color: var(--green);
   font-size: 1.1rem;
 }
 
 .about-grid p,
 .archive-card p,
 .principle p,
-.archive-heading > p {
+.archive-heading > p,
+.iteration-card p {
   margin: 0;
   color: var(--muted);
   font-size: 0.98rem;
@@ -196,7 +249,7 @@ h1 {
 }
 
 .method {
-  background: #f1eee5;
+  background: var(--cream);
 }
 
 .poll {
@@ -243,6 +296,7 @@ h1 {
   border: 1px solid rgba(251, 250, 246, 0.22);
   background: rgba(251, 250, 246, 0.06);
   padding: 14px 16px;
+  border-radius: 2px;
   cursor: pointer;
 }
 
@@ -284,7 +338,7 @@ h1 {
 
 .principle {
   display: grid;
-  grid-template-columns: 58px 1fr;
+  grid-template-columns: 64px 1fr;
   align-items: start;
   gap: 16px;
 }
@@ -297,8 +351,78 @@ h1 {
 }
 
 .principle p {
-  color: var(--ink);
-  font-weight: 650;
+  color: var(--muted);
+}
+
+.iterations {
+  background: var(--paper);
+}
+
+.iteration-grid {
+  display: grid;
+  gap: 14px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.iteration-card {
+  position: relative;
+  display: grid;
+  min-height: 280px;
+  align-content: end;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(180deg, rgba(251, 250, 246, 0.04), rgba(25, 24, 20, 0.74)),
+    url("/archive-final/trace-pavement-overview.jpg");
+  background-position: center;
+  background-size: cover;
+  color: var(--paper);
+  padding: 22px;
+}
+
+.iteration-card:nth-child(2) {
+  background-image:
+    linear-gradient(180deg, rgba(251, 250, 246, 0.02), rgba(25, 24, 20, 0.76)),
+    url("/archive-final/wall-edge-existing-ecology.jpg");
+}
+
+.iteration-card:nth-child(3) {
+  background-image:
+    linear-gradient(180deg, rgba(251, 250, 246, 0.02), rgba(25, 24, 20, 0.76)),
+    url("/archive-final/site01-after-detail.jpg");
+}
+
+.iteration-card span {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  color: rgba(251, 250, 246, 0.78);
+  font-size: 4.4rem;
+  font-weight: 800;
+  line-height: 0.9;
+}
+
+.iteration-card h3 {
+  max-width: 12ch;
+  margin-top: 4px;
+  color: var(--paper);
+  font-size: clamp(2rem, 8vw, 3.8rem);
+  line-height: 0.92;
+}
+
+.iteration-card p {
+  max-width: 420px;
+  color: rgba(251, 250, 246, 0.84);
+}
+
+.iteration-card > p:first-of-type {
+  margin-bottom: 8px;
+  color: var(--gold-soft);
+  font-size: 0.76rem;
+  font-weight: 780;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .archive {
@@ -348,7 +472,7 @@ h1 {
   gap: 24px;
   justify-items: start;
   padding: 58px 22px 72px;
-  background: var(--gold-soft);
+  background: var(--gold);
 }
 
 .closing p {
@@ -361,6 +485,10 @@ h1 {
 }
 
 @media (min-width: 760px) {
+  .top-nav a {
+    padding: 11px 18px;
+  }
+
   .hero {
     grid-template-columns: minmax(0, 1.08fr) minmax(420px, 0.92fr);
   }
@@ -387,7 +515,7 @@ h1 {
   }
 
   .method-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .poll-panel {
@@ -396,8 +524,11 @@ h1 {
   }
 
   .principle {
-    grid-template-columns: 1fr;
-    min-height: 190px;
+    min-height: 210px;
+  }
+
+  .iteration-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .archive-heading {
@@ -417,6 +548,12 @@ h1 {
 
   .closing {
     padding: 86px 54px 96px;
+  }
+}
+
+@media (min-width: 1080px) {
+  .method-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
