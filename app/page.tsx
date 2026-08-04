@@ -3,37 +3,37 @@ import { Poll } from "./Poll";
 const archiveItems = [
   {
     src: "/archive-final/hero-application.jpg",
-    title: "Applying the trace",
-    meta: "Iteration 01 · Tree-side asphalt crack",
-    note: "A temporary yellow repair trace was applied by hand to test whether a small material gesture could redirect attention.",
+    title: "Urban Cellulite",
+    meta: "Iteration 01 · Weathered surface",
+    note: "The first public test followed a pavement crack as a small gesture of visible repair.",
   },
   {
-    src: "/archive-final/site01-baseline-crack.jpg",
-    title: "Before intervention",
-    meta: "Existing condition · 19 Jul 2026",
-    note: "The crack, tree edge and small ecological conditions were already present before the intervention began.",
+    src: "/archive-final/iterations/moss-threshold.jpg",
+    title: "Moss Threshold",
+    meta: "Iteration 02 · Maintenance in transition",
+    note: "The trace crossed a repaired pavement edge where moss, asphalt and municipal maintenance meet.",
   },
   {
-    src: "/archive-final/site01-after-detail.jpg",
-    title: "Repair as attention",
-    meta: "Immediately after application",
-    note: "The trace follows the crack rather than covering it, making damage and marginal ecology briefly perceptible.",
+    src: "/archive-final/iterations/living-edge-detail.jpg",
+    title: "Living Edge",
+    meta: "Iteration 03 · Following the crack",
+    note: "The intervention worked with an existing plant at the edge rather than introducing new growth.",
   },
   {
-    src: "/archive-final/two-hour-return-material.jpg",
-    title: "Return visit",
-    meta: "Same-day follow-up",
-    note: "Return visits document how weather, public space and material behaviour reshape the intervention.",
+    src: "/archive-final/iterations/making-public-space.jpg",
+    title: "Working in public",
+    meta: "Field action · Exposure and conversation",
+    note: "Making the trace in public became part of the research, opening small moments of curiosity.",
   },
   {
-    src: "/archive-final/day2-material-state.jpg",
-    title: "Weathering",
-    meta: "Day 2 material state",
-    note: "Fading, residue and disappearance are treated as research evidence rather than failure.",
+    src: "/archive-final/material-refinement-texture.jpg",
+    title: "Material refinement",
+    meta: "Paper pulp · flour · turmeric · water",
+    note: "Leaving some paper fibre intact made the mixture less clay-like and easier to read as a temporary trace.",
   },
   {
     src: "/archive-final/wall-edge-existing-ecology.jpg",
-    title: "Existing ecology",
+    title: "Existing conditions",
     meta: "Wall edge · spontaneous vegetation",
     note: "The project works with plants, moss and moisture already occupying overlooked urban edges.",
   },
@@ -60,6 +60,33 @@ const iterations = [
   },
 ];
 
+const materials = [
+  {
+    name: "Paper pulp",
+    role: "Fibre body",
+    detail:
+      "Kitchen paper is soaked and partly broken down. Keeping visible fibres prevents the mixture from becoming a clay-like mass.",
+  },
+  {
+    name: "Flour",
+    role: "Binder",
+    detail:
+      "A small amount of flour helps the pulp hold together while remaining temporary and water-sensitive.",
+  },
+  {
+    name: "Turmeric",
+    role: "Visible pigment",
+    detail:
+      "Turmeric gives the trace its yellow presence, making the crack noticeable without using synthetic paint.",
+  },
+  {
+    name: "Water",
+    role: "Mixing medium",
+    detail:
+      "Water controls workability on site and allows the material to be applied lightly along the crack.",
+  },
+];
+
 const principles = [
   {
     title: "Existing conditions",
@@ -82,13 +109,6 @@ const principles = [
 export default function Home() {
   return (
     <main>
-      <nav className="top-nav" aria-label="Project sections">
-        <a href="#about">About</a>
-        <a href="#iterations">Iterations</a>
-        <a href="#poll">Question</a>
-        <a href="#archive">Archive</a>
-      </nav>
-
       <section className="hero" aria-label="Ecological Kintsugi introduction">
         <div className="hero-media">
           <img
@@ -98,7 +118,10 @@ export default function Home() {
         </div>
         <div className="hero-copy">
           <p className="eyebrow">Ecological Kintsugi</p>
-          <h1>Look again at the crack.</h1>
+          <h1>
+            Repairing Attention.
+            <span>Leaving the Crack.</span>
+          </h1>
           <p className="lead">
             A temporary repair trace project making overlooked urban cracks,
             moss and spontaneous plant life briefly visible in everyday
@@ -181,6 +204,45 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section material" id="material">
+        <div className="section-heading archive-heading">
+          <div>
+            <p className="eyebrow">Material recipe</p>
+            <h2>Visible, temporary, removable</h2>
+          </div>
+          <p>
+            The selected mixture combines paper pulp, flour, turmeric and
+            water. It is not treated as environmentally perfect; its value lies
+            in small-scale, careful and temporary application.
+          </p>
+        </div>
+        <div className="material-layout">
+          <figure className="material-image">
+            <img
+              src="/archive-final/material-refinement-texture.jpg"
+              alt="Yellow paper pulp, flour and turmeric mixture with visible paper fibres"
+              loading="lazy"
+            />
+            <figcaption>
+              Material refinement: keeping some paper fibres visible improved
+              texture and prevented the mixture from becoming too clay-like.
+            </figcaption>
+          </figure>
+          <div className="material-list">
+            {materials.map((item, index) => (
+              <article className="material-item" key={item.name}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <div>
+                  <p>{item.role}</p>
+                  <h3>{item.name}</h3>
+                  <p>{item.detail}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="section iterations" id="iterations">
         <div className="section-heading archive-heading">
           <div>
@@ -253,6 +315,11 @@ export default function Home() {
         </p>
         <a href="#about">Read the project again</a>
       </section>
+
+      <footer className="site-footer">
+        <p>Ecological Kintsugi</p>
+        <p>© Willow Yang 2026</p>
+      </footer>
     </main>
   );
 }
