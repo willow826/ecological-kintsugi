@@ -421,7 +421,7 @@ h1 span {
   border: 1px solid var(--line);
   background:
     linear-gradient(180deg, rgba(25, 24, 20, 0.02), rgba(25, 24, 20, 0.7)),
-    url("/archive-final/trace-pavement-overview.jpg");
+    url("/archive-final/iterations/urban-cellulite-trace.png");
   background-position: center;
   background-size: cover;
   color: var(--paper);

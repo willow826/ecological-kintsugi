@@ -2,7 +2,7 @@ import { Poll } from "./Poll";
 
 const archiveItems = [
   {
-    src: "/archive-final/hero-application.jpg",
+    src: "/archive-final/iterations/urban-cellulite-trace.png",
     title: "Urban Cellulite",
     meta: "Iteration 01 · Weathered surface",
     note: "The first public test followed a pavement crack as a small gesture of visible repair.",
