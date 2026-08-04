@@ -421,7 +421,7 @@ h1 span {
   border: 1px solid var(--line);
   background:
     linear-gradient(180deg, rgba(25, 24, 20, 0.02), rgba(25, 24, 20, 0.7)),
-    url("/archive-final/iterations/urban-cellulite-trace.png");
+    var(--iteration-image, url("/archive-final/iterations/urban-cellulite-trace.png"));
   background-position: center;
   background-size: cover;
   color: var(--paper);
@@ -431,13 +431,13 @@ h1 span {
 .iteration-card:nth-child(2) {
   background-image:
     linear-gradient(180deg, rgba(25, 24, 20, 0.04), rgba(25, 24, 20, 0.72)),
-    url("/archive-final/iterations/moss-threshold.jpg");
+    var(--iteration-image, url("/archive-final/iterations/moss-threshold.jpg"));
 }
 
 .iteration-card:nth-child(3) {
   background-image:
     linear-gradient(180deg, rgba(25, 24, 20, 0.04), rgba(25, 24, 20, 0.72)),
-    url("/archive-final/iterations/living-edge-portrait.png");
+    var(--iteration-image, url("/archive-final/iterations/living-edge-portrait.png"));
   background-position: center top;
 }
 

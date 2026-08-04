@@ -1,4 +1,12 @@
+import type { CSSProperties } from "react";
 import { Poll } from "./Poll";
+
+const gitHubRepoPath =
+  process.env.GITHUB_PAGES === "1" && process.env.GITHUB_PAGES_REPO
+    ? `/${process.env.GITHUB_PAGES_REPO}`
+    : "";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? gitHubRepoPath;
+const asset = (path: string) => `${basePath}${path}`;
 
 const archiveItems = [
   {
@@ -44,18 +52,21 @@ const iterations = [
     number: "01",
     title: "Urban Cellulite",
     subtitle: "Weathered Surface",
+    image: "/archive-final/iterations/urban-cellulite-trace.png",
     body: "The first intervention tested whether a visible repair trace could sit within everyday pavement without becoming a permanent fix.",
   },
   {
     number: "02",
     title: "Moss Threshold",
     subtitle: "Maintenance in Transition",
+    image: "/archive-final/iterations/moss-threshold.jpg",
     body: "The second iteration shifted towards cracks where moss, repair and municipal maintenance meet, treating the site as unstable rather than fixed.",
   },
   {
     number: "03",
     title: "Living Edge",
     subtitle: "Following the Crack",
+    image: "/archive-final/iterations/living-edge-portrait.png",
     body: "The third iteration followed an existing crack-plant relationship, using the trace to reveal ecology already present at the edge.",
   },
 ];
@@ -112,7 +123,7 @@ export default function Home() {
       <section className="hero" aria-label="Ecological Kintsugi introduction">
         <div className="hero-media">
           <img
-            src="/archive-final/hero-application.jpg"
+            src={asset("/archive-final/hero-application.jpg")}
             alt="A person applying a yellow temporary repair trace to a pavement crack"
           />
         </div>
@@ -219,7 +230,7 @@ export default function Home() {
         <div className="material-layout">
           <figure className="material-image">
             <img
-              src="/archive-final/material-refinement-card.png"
+              src={asset("/archive-final/material-refinement-card.png")}
               alt="Yellow paper pulp, flour and turmeric mixture with visible paper fibres"
               loading="lazy"
             />
@@ -257,7 +268,15 @@ export default function Home() {
         </div>
         <div className="iteration-grid">
           {iterations.map((item) => (
-            <article className="iteration-card" key={item.title}>
+            <article
+              className="iteration-card"
+              key={item.title}
+              style={
+                {
+                  "--iteration-image": `url("${asset(item.image)}")`,
+                } as CSSProperties
+              }
+            >
               <span>{item.number}</span>
               <p>{item.subtitle}</p>
               <h3>{item.title}</h3>
@@ -297,7 +316,7 @@ export default function Home() {
         <div className="archive-grid">
           {archiveItems.map((item) => (
             <article className="archive-card" key={item.src}>
-              <img src={item.src} alt={item.title} loading="lazy" />
+              <img src={asset(item.src)} alt={item.title} loading="lazy" />
               <div>
                 <p className="archive-meta">{item.meta}</p>
                 <h3>{item.title}</h3>
