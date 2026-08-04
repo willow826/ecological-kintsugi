@@ -14,7 +14,7 @@ const archiveItems = [
     note: "The trace crossed a repaired pavement edge where moss, asphalt and municipal maintenance meet.",
   },
   {
-    src: "/archive-final/iterations/living-edge-detail.jpg",
+    src: "/archive-final/iterations/living-edge-portrait.png",
     title: "Living Edge",
     meta: "Iteration 03 · Following the crack",
     note: "The intervention worked with an existing plant at the edge rather than introducing new growth.",
@@ -26,10 +26,10 @@ const archiveItems = [
     note: "Making the trace in public became part of the research, opening small moments of curiosity.",
   },
   {
-    src: "/archive-final/material-refinement-texture.jpg",
-    title: "Material refinement",
-    meta: "Paper pulp · flour · turmeric · water",
-    note: "Leaving some paper fibre intact made the mixture less clay-like and easier to read as a temporary trace.",
+    src: "/archive-final/material-first-test.png",
+    title: "First material test",
+    meta: "Early repair trace · Weathered surface",
+    note: "The first material test showed how a pale yellow trace could follow existing cracks without covering the pavement.",
   },
   {
     src: "/archive-final/wall-edge-existing-ecology.jpg",
@@ -219,7 +219,7 @@ export default function Home() {
         <div className="material-layout">
           <figure className="material-image">
             <img
-              src="/archive-final/material-refinement-texture.jpg"
+              src="/archive-final/material-refinement-card.png"
               alt="Yellow paper pulp, flour and turmeric mixture with visible paper fibres"
               loading="lazy"
             />
